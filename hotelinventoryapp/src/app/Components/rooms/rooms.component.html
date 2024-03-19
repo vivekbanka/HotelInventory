@@ -1,1 +1,11 @@
 <p>Welcome to the {{hotelName}}</p>
+<div [hidden]="btoggle">
+    <p> total number of rooms</p>
+    <div [innerText]="numberofrooms"></div>
+</div>
+<div *ngIf="objrooms.roomsAvailable > 0">
+    <p> Rooms are available</p>
+    <app-rooms-list [Roomlists]="rolist" ></app-rooms-list>
+
+</div>
+<button (click)="toggle()"> Click to toggle</button>
