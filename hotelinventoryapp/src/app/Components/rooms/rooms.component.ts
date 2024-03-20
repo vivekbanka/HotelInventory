@@ -2,13 +2,14 @@ import { Component, NgModule, OnInit,Pipe } from '@angular/core';
 import {NgIf, NgFor, DatePipe} from '@angular/common'
 import { rooms, roomslist } from './rooms';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
     selector: 'app-rooms',
     standalone: true,
     templateUrl: './rooms.component.html',
     styleUrl: './rooms.component.scss',
-    imports: [NgIf, NgFor, DatePipe, RoomsListComponent]
+    imports: [NgIf, NgFor, DatePipe, RoomsListComponent, HeaderComponent]
 })
 
 export class RoomsComponent implements OnInit {
@@ -53,5 +54,8 @@ export class RoomsComponent implements OnInit {
 
   toggle() {
       this.btoggle = !this.btoggle;
+  }
+  onSelectedRoom (room:roomslist) {
+    console.log(room)
   }
 }

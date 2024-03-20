@@ -3,9 +3,13 @@
     <p> total number of rooms</p>
     <div [innerText]="numberofrooms"></div>
 </div>
+<div>
+  <app-header></app-header>
+
+</div>
 <div *ngIf="objrooms.roomsAvailable > 0">
     <p> Rooms are available</p>
-    <app-rooms-list [Roomlists]="rolist" ></app-rooms-list>
+    <app-rooms-list [Roomlists]="rolist" (selectedRooms)="(onSelectedRoom($event))"></app-rooms-list>
 
 </div>
 <button (click)="toggle()"> Click to toggle</button>

@@ -4,6 +4,9 @@
         <th>Room Price</th>
         <th>Room Amenities</th>
         <th>Room Check In</th>
+        <th>
+            Action
+        </th>
     </tr>
     <tr *ngFor="let room of Roomlists">
         <td>{{room.roomType}}</td>
@@ -11,6 +14,9 @@
         <td>{{room.amenities}}</td>
         <td>
             {{room.checkInTime | date }}
+        </td>
+        <td>
+            <button (click)="selectRoom(room)"> select</button>
         </td>
 
     </tr>
